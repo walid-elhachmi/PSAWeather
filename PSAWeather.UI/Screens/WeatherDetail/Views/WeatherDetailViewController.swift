@@ -12,6 +12,12 @@ class WeatherDetailViewController: UIViewController {
     //Instance properties
     private var weatherViewModel = WeatherViewModel()
     
+    private let colors = [UIColor.blue.cgColor, UIColor.cyan.cgColor]
+    private let startPoint = CGPoint(x: 1, y: 0)
+    private let endPoint = CGPoint(x: 0, y: 1)
+    
+    var cityName: String?
+    
     //@IBOutlets
     @IBOutlet private weak var cityNameLabel: UILabel!
     @IBOutlet private weak var temperatureLabel: UILabel!
@@ -21,6 +27,13 @@ class WeatherDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.gradient(colors: colors, startPoint: startPoint, endPoint: endPoint)
+        updateView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.navigationController?.navigationBar.tintColor = .white
     }

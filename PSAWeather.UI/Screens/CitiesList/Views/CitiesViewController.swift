@@ -33,6 +33,12 @@ class CitiesViewController: UIViewController {
         tableView.register(cellClass: CityViewCell.self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.tintColor = .black
+    }
+    
     @objc
     private func addCityTapped() {
         let alert = UIAlertController(title: "New City", message: "Add a new city name", preferredStyle: .alert)
