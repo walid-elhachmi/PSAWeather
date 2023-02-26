@@ -20,7 +20,6 @@ class WeatherViewModel {
         if let temp = weatherModel?.main.temp {
             return String(format: "%.0f°", temp)
         }
-        
         return "-°"
     }
     
