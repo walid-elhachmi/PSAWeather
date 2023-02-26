@@ -36,7 +36,7 @@ public class NetworkManager {
                     completion(.failure(NetworkError.emptyData))
                     return
                 }
-                
+                print(String(data: try! JSONSerialization.data(withJSONObject: data, options: .prettyPrinted), encoding: .utf8)!)
                 do {
                     let decoder = JSONDecoder()
                     let decodeData = try decoder.decode(T.self, from: data)
