@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3564CA0029ABE8F80059C9A3 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564C9FF29ABE8F80059C9A3 /* LocalDataManager.swift */; };
+		3564CA0329ABE9EF0059C9A3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3564CA0129ABE9EF0059C9A3 /* DataModel.xcdatamodeld */; };
+		3564CA0529ABFCAC0059C9A3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564CA0429ABFCAC0059C9A3 /* UIView+Extension.swift */; };
+		3564CA0E29AC069D0059C9A3 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3564CA0C29AC069D0059C9A3 /* City+CoreDataClass.swift */; };
 		35920D4A29AAC2C600F2109F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35920D4929AAC2C600F2109F /* AppDelegate.swift */; };
 		35920D5129AAC2C600F2109F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35920D4F29AAC2C600F2109F /* Main.storyboard */; };
 		35920D5329AAC2C800F2109F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35920D5229AAC2C800F2109F /* Assets.xcassets */; };
@@ -71,6 +75,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3564C9FF29ABE8F80059C9A3 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		3564CA0229ABE9EF0059C9A3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		3564CA0429ABFCAC0059C9A3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		3564CA0C29AC069D0059C9A3 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		35920D4629AAC2C600F2109F /* PSAWeather.UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSAWeather.UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35920D4929AAC2C600F2109F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35920D5029AAC2C600F2109F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 			children = (
 				35EAB55A29AB58D6006B7522 /* UIViewController+Extensions.swift */,
 				35EAB5B829ABBA76006B7522 /* UITableView+Extension.swift */,
+				3564CA0429ABFCAC0059C9A3 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +303,9 @@
 		35EAB5C229ABC4F1006B7522 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
+				3564CA0129ABE9EF0059C9A3 /* DataModel.xcdatamodeld */,
+				3564C9FF29ABE8F80059C9A3 /* LocalDataManager.swift */,
+				3564CA0C29AC069D0059C9A3 /* City+CoreDataClass.swift */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -448,10 +460,14 @@
 				35EAB5B929ABBA76006B7522 /* UITableView+Extension.swift in Sources */,
 				35EAB5BC29ABC304006B7522 /* CitiesDataSource.swift in Sources */,
 				35EAB5A629AB6DBB006B7522 /* CityViewModel.swift in Sources */,
+				3564CA0029ABE8F80059C9A3 /* LocalDataManager.swift in Sources */,
 				35EAB5B729AB7E83006B7522 /* WeatherDetailViewController.swift in Sources */,
 				35920D4A29AAC2C600F2109F /* AppDelegate.swift in Sources */,
+				3564CA0529ABFCAC0059C9A3 /* UIView+Extension.swift in Sources */,
+				3564CA0E29AC069D0059C9A3 /* City+CoreDataClass.swift in Sources */,
 				35EAB5B629AB7E83006B7522 /* WeatherModel.swift in Sources */,
 				35EAB5C029ABC3EA006B7522 /* CityViewCell.swift in Sources */,
+				3564CA0329ABE9EF0059C9A3 /* DataModel.xcdatamodeld in Sources */,
 				35EAB55B29AB58D6006B7522 /* UIViewController+Extensions.swift in Sources */,
 				35EAB55429AB564A006B7522 /* CitiesViewController.swift in Sources */,
 			);
@@ -829,6 +845,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3564CA0129ABE9EF0059C9A3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3564CA0229ABE9EF0059C9A3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 3564CA0229ABE9EF0059C9A3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 35920D3E29AAC2C600F2109F /* Project object */;
 }

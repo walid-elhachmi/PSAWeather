@@ -9,11 +9,14 @@ import UIKit
 
 class CityViewCell: UITableViewCell {
 
+    @IBOutlet weak var labelContainer: UIView!
     @IBOutlet weak var cityNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        labelContainer.layer.cornerRadius = 8
+        labelContainer.setShadow()
     }
 
     func configure(cityName: String) {

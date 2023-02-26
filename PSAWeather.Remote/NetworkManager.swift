@@ -18,6 +18,7 @@ public class NetworkManager {
     
     public init() {
         let configuration = URLSessionConfiguration.default
+        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         self.urlSession = URLSession(configuration: configuration)
     }
     

@@ -35,8 +35,8 @@ class WeatherViewModel {
         self.networkManager = networkManager
     }
     
-    func getWeather(completion: @escaping (_ success: Bool, _ message: String?) -> Void) {
-        guard let url = Configuration.Endpoint.weather("paris").url else {
+    func getWeather(cityName: String, completion: @escaping (_ success: Bool, _ message: String?) -> Void) {
+        guard let url = Configuration.Endpoint.weather(cityName.lowercased()).url else {
             completion(false, "Url request not found")
             return
         }

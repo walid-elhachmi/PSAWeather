@@ -21,19 +21,19 @@
                         <rect key="frame" x="16" y="8" width="288" height="64"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{Name}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8p-9c-weA">
-                                <rect key="frame" x="8" y="8" width="272" height="48"/>
+                                <rect key="frame" x="16" y="8" width="256" height="48"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="T8p-9c-weA" firstAttribute="top" secondItem="2Iu-ZO-juQ" secondAttribute="top" constant="8" id="DmL-xi-ZsM"/>
-                            <constraint firstAttribute="trailing" secondItem="T8p-9c-weA" secondAttribute="trailing" constant="8" id="DxJ-p5-Dcw"/>
+                            <constraint firstAttribute="trailing" secondItem="T8p-9c-weA" secondAttribute="trailing" constant="16" id="DxJ-p5-Dcw"/>
                             <constraint firstAttribute="bottom" secondItem="T8p-9c-weA" secondAttribute="bottom" constant="8" id="UGS-k8-fn1"/>
                             <constraint firstAttribute="height" constant="64" id="emr-8L-eW8"/>
-                            <constraint firstItem="T8p-9c-weA" firstAttribute="leading" secondItem="2Iu-ZO-juQ" secondAttribute="leading" constant="8" id="pEn-Cp-vRS"/>
+                            <constraint firstItem="T8p-9c-weA" firstAttribute="leading" secondItem="2Iu-ZO-juQ" secondAttribute="leading" constant="16" id="pEn-Cp-vRS"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -47,6 +47,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cityNameLabel" destination="T8p-9c-weA" id="jF6-Pu-fOk"/>
+                <outlet property="labelContainer" destination="2Iu-ZO-juQ" id="JQs-cn-Oam"/>
             </connections>
             <point key="canvasLocation" x="94.656488549618317" y="51.760563380281695"/>
         </tableViewCell>

@@ -18,11 +18,13 @@ class CitiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         
-        dataSource.didSelect = { [weak self] city in
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addCityTapped))
+        
+        dataSource.data = cityViewModel.getCities()
+        dataSource.didSelect = { [weak self] cityName in
             let weatherDetailViewController = WeatherDetailViewController.instantiateFromStoryboard(named: "Main")
+            weatherDetailViewController.cityName = cityName
             self?.navigationController?.pushViewController(weatherDetailViewController, animated: true)
         }
         
@@ -32,8 +34,25 @@ class CitiesViewController: UIViewController {
     }
     
     @objc
-    private func addTapped() {
-        print("Add Tapped")
+    private func addCityTapped() {
+        let alert = UIAlertController(title: "New City", message: "Add a new city name", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] action in
+            
+            guard let textField = alert.textFields?.first, let name = textField.text else { return }
+            
+            self?.dataSource.data.append(CityModel(name: name))
+            self?.cityViewModel.addCity(name: name)
+            self?.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",  style: .cancel)
+        
+        alert.addTextField()
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
     }
 
 }

@@ -9,20 +9,21 @@ import UIKit
 
 class CitiesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
-    var data: [City] = []
+    var data: [CityModel] = []
     var didSelect: ((String) -> Void)?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CityViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.configure(cityName: "Paris")
+        cell.configure(cityName: data[indexPath.row].name)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelect?("Paris")
+        didSelect?(data[indexPath.row].name)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

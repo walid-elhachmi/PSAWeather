@@ -23,20 +23,11 @@ class WeatherDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = .white
-        
-        // Create a gradient layer
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.cyan.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 1, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        view.layer.insertSublayer(gradientLayer, at: 0)
-        
-        updateUI()
     }
     
-    private func updateUI() {
-        weatherViewModel.getWeather { success, message in
+    private func updateView() {
+        guard let cityName = self.cityName else { return }
+        weatherViewModel.getWeather(cityName: cityName) { success, message in
             DispatchQueue.main.async {
                 if success {
                     self.cityNameLabel.text = self.weatherViewModel.cityName
@@ -45,6 +36,12 @@ class WeatherDetailViewController: UIViewController {
                     self.descriptionLabel.text = self.weatherViewModel.description
                 } else {
                     let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+                    
+                    let cancelAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+                        self.navigationController?.popViewController(animated: true)
+                    }
+
+                    alert.addAction(cancelAction)
                     self.present(alert, animated: true)
                 }
             }
