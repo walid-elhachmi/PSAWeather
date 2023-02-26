@@ -21,6 +21,9 @@ class WeatherDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = .white
+        
         // Create a gradient layer
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
