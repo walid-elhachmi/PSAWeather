@@ -48,16 +48,74 @@
                     <view key="view" contentMode="scaleToFill" id="BAq-v6-Mib">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iUS-Rl-Baw">
+                                <rect key="frame" x="32" y="59" width="329" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AM-pN-HTi">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="42.666666666666664"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="{Name}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGq-6E-98b">
+                                                <rect key="frame" x="0.0" y="0.0" width="279" height="42.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10d" translatesAutoresizingMaskIntoConstraints="NO" id="CQC-0j-OCL">
+                                                <rect key="frame" x="279" y="0.0" width="50" height="42.666666666666664"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kb-ic-ELe">
+                                        <rect key="frame" x="0.0" y="42.666666666666671" width="329" height="34.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="{5°}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iV-qq-GdL">
+                                                <rect key="frame" x="0.0" y="0.0" width="251.66666666666666" height="34.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="{Clear}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qE-Gy-JHP">
+                                                <rect key="frame" x="251.66666666666671" y="0.0" width="77.333333333333343" height="34.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sjk-70-0rs">
+                                        <rect key="frame" x="0.0" y="77" width="329" height="682"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="h5f-k8-NzL"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <constraints>
+                            <constraint firstItem="h5f-k8-NzL" firstAttribute="bottom" secondItem="iUS-Rl-Baw" secondAttribute="bottom" id="Gar-5n-cZm"/>
+                            <constraint firstItem="h5f-k8-NzL" firstAttribute="trailing" secondItem="iUS-Rl-Baw" secondAttribute="trailing" constant="32" id="SYk-rh-QVM"/>
+                            <constraint firstItem="iUS-Rl-Baw" firstAttribute="top" secondItem="h5f-k8-NzL" secondAttribute="top" id="bcY-6k-bYZ"/>
+                            <constraint firstItem="iUS-Rl-Baw" firstAttribute="leading" secondItem="h5f-k8-NzL" secondAttribute="leading" constant="32" id="rhx-Y0-9Tq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="cGq-6E-98b" id="dPr-3K-Vph"/>
+                        <outlet property="descriptionLabel" destination="4qE-Gy-JHP" id="WPe-fK-Jep"/>
+                        <outlet property="iconImage" destination="CQC-0j-OCL" id="Zvl-MF-vQJ"/>
+                        <outlet property="temperatureLabel" destination="9iV-qq-GdL" id="TMi-WG-2yE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnX-Pq-Yjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="-2"/>
+            <point key="canvasLocation" x="835.87786259541986" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="10d" width="50" height="50"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
