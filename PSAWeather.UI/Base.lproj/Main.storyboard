@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap “Add” to add a new city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hho-Ma-9i9">
+                                <rect key="frame" x="32" y="415" width="329" height="22"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bBr-o6-Bvp">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -25,6 +31,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hho-Ma-9i9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="UDD-Mb-fgu"/>
+                            <constraint firstItem="hho-Ma-9i9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="URs-l3-6k8"/>
+                            <constraint firstItem="hho-Ma-9i9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xaf-e5-bCz"/>
                             <constraint firstItem="bBr-o6-Bvp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oKC-Xp-FJj"/>
                             <constraint firstItem="bBr-o6-Bvp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oTZ-OE-Gz9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bBr-o6-Bvp" secondAttribute="trailing" id="pS7-R2-6P2"/>
@@ -32,6 +41,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyLabel" destination="hho-Ma-9i9" id="AkN-PS-DfV"/>
                         <outlet property="tableView" destination="bBr-o6-Bvp" id="7Zl-WE-4ln"/>
                     </connections>
                 </viewController>
