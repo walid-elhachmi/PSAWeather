@@ -13,7 +13,7 @@ class WeatherViewModel {
     private var weatherModel: WeatherModel?
 
     var cityName: String {
-        return weatherModel?.name ?? ""
+        return weatherModel?.name ?? "-"
     }
     
     var temperature: String {
@@ -28,7 +28,63 @@ class WeatherViewModel {
     }
     
     var description: String {
-        return weatherModel?.weather.first?.description ?? ""
+        return weatherModel?.weather.first?.description ?? "-"
+    }
+    
+    var temperatureMax: String {
+        if let temp = weatherModel?.main.tempMax {
+            return "Max: " + String(format: "%.0f°", temp)
+        }
+        return "Max: -°"
+    }
+    
+    var temperatureMin: String {
+        if let temp = weatherModel?.main.tempMin {
+            return "Min: " + String(format: "%.0f°", temp)
+        }
+        return "Min: -°"
+    }
+    
+    var humidity: String {
+        if let humidity = weatherModel?.main.humidity {
+            return "Humidity: " + String(format: "%.0f", humidity) + "%"
+        }
+        return "Humidity: -°"
+    }
+    
+    var pressure: String {
+        if let pressure = weatherModel?.main.pressure {
+            return "Pressure: " + String(format: "%.0f", pressure) + " mb"
+        }
+        return "Pressure: -°"
+    }
+    
+    var sunrise: String {
+        if let sunrise = weatherModel?.sun.sunrise {
+            return "Sunrise: " + format(timestamp: sunrise)
+        }
+        return "Sunrise : -"
+    }
+    
+    var sunset: String {
+        if let sunset = weatherModel?.sun.sunset {
+            return "Sunset: " + format(timestamp: sunset)
+        }
+        return "Sunset : -"
+    }
+    
+    var windSpeed: String {
+        if let speed = weatherModel?.wind.speed {
+            return "Speed: " + String(format: "%.0f", speed) + " km/h"
+        }
+        return "Speed : -"
+    }
+    
+    var windDegree: String {
+        if let deg = weatherModel?.wind.deg {
+            return "Degree: " + String(format: "%.0f°", deg)
+        }
+        return "Degree : -°"
     }
     
     init(networkManager: NetworkManager = NetworkManager()) {
@@ -49,5 +105,13 @@ class WeatherViewModel {
                 completion(false, error.localizedDescription)
             }
         }
+    }
+    
+    private func format(timestamp: Double) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        return dateFormatter.string(from: date)
     }
 }

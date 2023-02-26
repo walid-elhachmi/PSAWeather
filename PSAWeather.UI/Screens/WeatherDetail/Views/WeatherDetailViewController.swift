@@ -24,6 +24,17 @@ class WeatherDetailViewController: UIViewController {
     @IBOutlet private weak var iconImage: UIImageView!
     @IBOutlet private weak var descriptionLabel: UILabel!
     
+    @IBOutlet private weak var temperatureMaxLabel: UILabel!
+    @IBOutlet private weak var temperatureMinLabel: UILabel!
+    
+    @IBOutlet private weak var humidityLabel: UILabel!
+    @IBOutlet private weak var pressureLabel: UILabel!
+    
+    @IBOutlet private weak var sunriseLabel: UILabel!
+    @IBOutlet private weak var sunsetLabel: UILabel!
+    
+    @IBOutlet private weak var windSpeedLabel: UILabel!
+    @IBOutlet private weak var windDegreeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +51,28 @@ class WeatherDetailViewController: UIViewController {
     
     private func updateView() {
         guard let cityName = self.cityName else { return }
+        
         weatherViewModel.getWeather(cityName: cityName) { success, message in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 if success {
                     self.cityNameLabel.text = self.weatherViewModel.cityName
                     self.temperatureLabel.text = self.weatherViewModel.temperature
                     self.iconImage.image = UIImage(named: self.weatherViewModel.iconName)
                     self.descriptionLabel.text = self.weatherViewModel.description
+                    
+                    self.temperatureMaxLabel.text = self.weatherViewModel.temperatureMax
+                    self.temperatureMinLabel.text = self.weatherViewModel.temperatureMin
+                    
+                    self.humidityLabel.text = self.weatherViewModel.humidity
+                    self.pressureLabel.text = self.weatherViewModel.pressure
+                    
+                    self.sunriseLabel.text = self.weatherViewModel.sunrise
+                    self.sunsetLabel.text = self.weatherViewModel.sunset
+                    
+                    self.windSpeedLabel.text = self.weatherViewModel.windSpeed
+                    self.windDegreeLabel.text = self.weatherViewModel.windDegree
+                    
                 } else {
                     let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
                     
