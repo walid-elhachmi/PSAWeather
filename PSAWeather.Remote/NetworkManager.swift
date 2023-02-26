@@ -7,10 +7,14 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     case invalidResponse
     case emptyData
     case decodingError(Error)
+    
+    static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
+        return true
+    }
 }
 
 public class NetworkManager {
